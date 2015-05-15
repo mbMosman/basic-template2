@@ -1,6 +1,7 @@
-name: Morea CORE (Change me)
+name: Basic Template
 highlighter: pygments
 safe: false
 baseurl: /core
 exclude: [morea]
-morea_theme: spacelab
+morea_theme: superhero
+
