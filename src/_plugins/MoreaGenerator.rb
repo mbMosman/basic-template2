@@ -9,6 +9,7 @@ module Jekyll
 
     def configSite(site)
       site.config['morea_module_pages'] = []
+      site.config['morea_prerequisite_pages'] = []
       site.config['morea_outcome_pages'] = []
       site.config['morea_reading_pages'] = []
       site.config['morea_experience_pages'] = []
@@ -223,6 +224,8 @@ module Jekyll
           site.config['morea_experience_pages'] << new_page
         elsif new_page.data['morea_type'] == "assessment"
           site.config['morea_assessment_pages'] << new_page
+        elsif new_page.data['morea_type'] == "prerequisite"
+          site.config['morea_prerequisite_pages'] << new_page
         elsif new_page.data['morea_type'] == "home"
           site.config['morea_home_page'] = new_page
         elsif new_page.data['morea_type'] == "footer"
@@ -349,6 +352,9 @@ module Jekyll
         end
       end
 
+      unless self.data['morea_prerequisites']
+        self.data['morea_prerequisites'] = []
+      end
       unless self.data['morea_related_outcomes']
         self.data['morea_related_outcomes'] = []
       end
