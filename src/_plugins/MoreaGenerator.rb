@@ -78,12 +78,18 @@ module Jekyll
       site.config['morea_assessment_pages'] = site.config['morea_assessment_pages'].sort_by {|page| page.data['morea_sort_order']}
     end
 
-    # Prepend site.baseurl to reading pages containing a morea_url that does not start with http.
+    # Prepend site.baseurl to reading pages and prerequisites containing a morea_url that does not start with http.
     def fix_morea_urls(site)
       site.config['morea_reading_pages'].each do |reading_page|
         reading_url = reading_page.data['morea_url']
         if reading_url.match(/^\/morea/)
           reading_page.data['morea_url'] = site.baseurl + reading_url
+        end
+      end
+      site.config['morea_prerequisite_pages'].each do |prereq_page|
+        prereq_url = prereq_page.data['morea_url']
+        if prereq_url.match(/^\/morea/)
+          prereq_page.data['morea_url'] = site.baseurl + prereq_url
         end
       end
     end
