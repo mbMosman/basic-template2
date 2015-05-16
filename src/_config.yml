@@ -1,7 +1,7 @@
 name: Basic Template
 highlighter: pygments
 safe: false
-baseurl: /core
+baseurl: /basic-template2
 exclude: [morea]
 morea_theme: superhero
 
