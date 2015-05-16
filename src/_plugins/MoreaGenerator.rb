@@ -87,10 +87,12 @@ module Jekyll
         end
       end
       site.config['morea_prerequisite_pages'].each do |prereq_page|
+        puts "fixing prereq page"
         prereq_url = prereq_page.data['morea_url']
-        if prereq_url.match(/^\/morea/)
+        if prereq_url.match(/^\/modules/)
           prereq_page.data['morea_url'] = site.baseurl + prereq_url
         end
+        puts prereq_page.data['morea_url']
       end
     end
 
