@@ -4,4 +4,10 @@ safe: false
 baseurl: /basic-template2
 exclude: [morea]
 morea_theme: superhero
-
+morea_navbar_items:
+  - Prerequisites
+  - Modules
+  #- Outcomes
+  - Readings
+  - Experiences
+  #- Assessments
