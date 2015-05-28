@@ -18,6 +18,9 @@ module Jekyll
       site.config['morea_footer_page'] = nil
       site.config['morea_page_table'] = {}
       site.config['morea_fatal_errors'] = false
+      if (site.config['morea_navbar_items'] == nil)
+        site.config['morea_navbar_items'] = ["Modules", "Outcomes", "Readings", "Experiences", "Assessments"]
+      end
 
     end
 
@@ -86,10 +89,20 @@ module Jekyll
           reading_page.data['morea_url'] = site.baseurl + reading_url
         end
       end
+      site.config['morea_experience_pages'].each do |experience_page|
+        experience_url = experience_page.data['morea_url']
+        if experience_url.match(/^\/morea/)
+          experience_page.data['morea_url'] = site.baseurl + experience_url
+        end
+      end
       site.config['morea_prerequisite_pages'].each do |prereq_page|
         prereq_url = prereq_page.data['morea_url']
         if prereq_url.match(/^\/modules/)
           prereq_page.data['morea_url'] = site.baseurl + prereq_url
+        end
+        icon_url = prereq_page.data['morea_icon_url']
+        if icon_url.match(/^\/morea/)
+          prereq_page.data['morea_icon_url'] = site.baseurl + icon_url
         end
       end
     end
