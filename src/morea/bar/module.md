@@ -2,6 +2,7 @@
 title: "Learn to Bar"
 published: true
 morea_id: bar
+morea_summary: "How to bar."
 morea_prerequisites:
   - prerequisite-foo
 morea_outcomes:

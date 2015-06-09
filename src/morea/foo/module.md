@@ -13,10 +13,11 @@ morea_assessments:
  - assessment1
 morea_type: module
 morea_icon_url: /morea/foo/logo.png
+morea_summary: "This is the summary for Foo"
 morea_labels:
  - required
  - intro
 morea_sort_order: 1
 ---
 
-This is the first module in this sample template.
+This is the markdown content for the Foo module.

@@ -3,11 +3,12 @@ highlighter: pygments
 safe: false
 baseurl: /basic-template2
 exclude: [morea]
-morea_theme: superhero
+morea_theme: spacelab
 morea_navbar_items:
-  - Prerequisites
+  #- Prerequisites
   - Modules
-  #- Outcomes
+  - Outcomes
   - Readings
   - Experiences
-  #- Assessments
+  - Assessments
+

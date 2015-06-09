@@ -424,6 +424,12 @@ module Jekyll
       @name = 'index.html'
 
       self.process(@name)
+
+      # Default morea_summary to the markdown page content if not specified already.
+      unless morea_page.data['morea_summary']
+        morea_page.data['morea_summary'] = morea_page.output
+      end
+
       self.data['morea_page'] = morea_page
       morea_page.data['module_page'] = self
       self.data['title'] = morea_page.data['title']
