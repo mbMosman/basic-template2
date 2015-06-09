@@ -6,6 +6,6 @@ modules: {
   { course: "ics311", name: "Learn to Qux", moduleUrl: "/basic-template2/modules/qux" }
 },
  prerequisites: {
-  { moduleUrl: "/morea/bar/module.html", prerequisiteUrl: "/morea/bar/prerequisite-foo.html" }
+  { moduleUrl: "/basic-template2/modules/bar", prerequisiteUrl: "http://cnn.com" }
 }
 }
