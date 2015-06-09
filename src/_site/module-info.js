@@ -1,11 +1,11 @@
 ics311 = {
 modules: {
-  { course: "ics311", name: "Learn to Foo", url: "/morea/foo/module.html" },
-  { course: "ics311", name: "Learn to Bar", url: "/morea/bar/module.html" },
-  { course: "ics311", name: "Learn to Baz", url: "/morea/baz/module.html" },
-  { course: "ics311", name: "Learn to Qux", url: "/morea/qux/module.html" }
+  { course: "ics311", name: "Learn to Foo", moduleUrl: "/modules/foo" },
+  { course: "ics311", name: "Learn to Bar", moduleUrl: "/modules/bar" },
+  { course: "ics311", name: "Learn to Baz", moduleUrl: "/modules/baz" },
+  { course: "ics311", name: "Learn to Qux", moduleUrl: "/modules/qux" }
 },
  prerequisites: {
-  { moduleUrl: "/morea/bar/module.html", prerequisiteUrl: "/morea/bar/prerequisite-foo.html" }
+  { moduleUrl: "/modules/bar", prerequisiteUrl: "http://cnn.com" }
 }
 }

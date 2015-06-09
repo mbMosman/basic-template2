@@ -291,7 +291,8 @@ module Jekyll
     def get_module_json_string(site)
       json = "modules: {"
       site.config['morea_module_pages'].each do |mod|
-        json += "\n  { course: #{site.config['morea_course'].inspect}, name: #{mod.data['title'].inspect}, moduleUrl: \"#{site.baseurl}/modules/#{mod.data['morea_id']}\" },"
+        mod_id = mod.data['morea_id']
+        json += "\n  { course: #{site.config['morea_course'].inspect}, name: #{mod.data['title'].inspect}, moduleUrl: #{get_module_url_from_id(mod_id, site).inspect} },"
       end
       #strip trailing comma
       json.chop!
@@ -300,10 +301,11 @@ module Jekyll
       json += "\n prerequisites: {"
       #for module_page in module_pages
       site.config['morea_module_pages'].each do |mod|
-        # for each prereq in module_page.prerequites_pages
+        mod_id = mod.data['morea_id']
+        # for each prereq in module_page.prerequisites_pages
         mod.data['morea_prerequisites'].each do |prereq_id|
           # create record with module_page.url and prerequisite_page.url
-          prereq_entry = "\n  { moduleUrl: #{mod.url.inspect}, prerequisiteUrl: #{get_url_from_id(prereq_id, site).inspect} },"
+          prereq_entry = "\n  { moduleUrl: #{get_module_url_from_id(mod_id, site).inspect}, prerequisiteUrl: #{get_module_url_from_id(prereq_id, site).inspect} },"
           json += prereq_entry
         end
       end
@@ -312,11 +314,15 @@ module Jekyll
       return json
     end
 
-    def get_url_from_id(page_id, site)
+    def get_module_url_from_id(page_id, site)
       url = ""
       site.config['morea_page_table'].each do |morea_id, morea_page|
         if (morea_id == page_id)
-          url = morea_page.url
+          if (morea_page.data['morea_type'] == 'module')
+            url = "#{site.baseurl}/modules/#{morea_page.data['morea_id']}"
+          else  # should be a prereq and so url is absolute.
+            url = morea_page.data['morea_url']
+          end
         end
       end
       if (url == "")
