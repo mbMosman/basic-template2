@@ -2,6 +2,7 @@ name: Basic Template
 highlighter: pygments
 safe: false
 baseurl: /basic-template2
+morea_course: ics311
 exclude: [morea]
 morea_theme: spacelab
 morea_navbar_items:
