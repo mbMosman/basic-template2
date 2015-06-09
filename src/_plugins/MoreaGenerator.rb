@@ -26,6 +26,11 @@ module Jekyll
       else
         site.config['morea_course'] = site.config['morea_course'].to_s
       end
+      if (site.config['morea_domain'] == nil)
+        site.config['morea_domain'] = ''
+      else
+        site.config['morea_domain'] = site.config['morea_domain'].to_s
+      end
     end
 
     def generate(site)
@@ -319,7 +324,7 @@ module Jekyll
       site.config['morea_page_table'].each do |morea_id, morea_page|
         if (morea_id == page_id)
           if (morea_page.data['morea_type'] == 'module')
-            url = "#{site.baseurl}/modules/#{morea_page.data['morea_id']}"
+            url = "#{site.config['morea_domain']}#{site.baseurl}/modules/#{morea_page.data['morea_id']}"
           else  # should be a prereq and so url is absolute.
             url = morea_page.data['morea_url']
           end

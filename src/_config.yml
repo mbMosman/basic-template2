@@ -3,6 +3,7 @@ highlighter: pygments
 safe: false
 baseurl: /basic-template2
 morea_course: ics311
+morea_domain: http://morea-framework.github.io/
 exclude: [morea]
 morea_theme: spacelab
 morea_navbar_items:
