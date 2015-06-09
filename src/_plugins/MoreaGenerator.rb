@@ -291,7 +291,7 @@ module Jekyll
     def get_module_json_string(site)
       json = "modules: {"
       site.config['morea_module_pages'].each do |mod|
-        json += "\n  { course: #{site.config['morea_course'].inspect}, name: #{mod.data['title'].inspect}, url: \"#{site.baseurl}#{mod.url}\" },"
+        json += "\n  { course: #{site.config['morea_course'].inspect}, name: #{mod.data['title'].inspect}, moduleUrl: \"#{site.baseurl}/modules/#{mod.data['title']}\" },"
       end
       #strip trailing comma
       json.chop!
