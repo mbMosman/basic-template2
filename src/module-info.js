@@ -1,9 +1,11 @@
 ics311 = {
 modules: {
-  { course: "ics311", name: "Learn to Foo", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/foo" },
-  { course: "ics311", name: "Learn to Bar", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/bar" },
-  { course: "ics311", name: "Learn to Baz", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/baz" },
-  { course: "ics311", name: "Learn to Qux", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/qux" }
+  { course: "ics311", title: "Learn to Foo", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/foo", description: This is the summary for Foo },
+  { course: "ics311", title: "Learn to Bar", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/bar", description: How to bar. },
+  { course: "ics311", title: "Learn to Baz", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/baz", description: <p>This is the third module in this sample template.</p>
+ },
+  { course: "ics311", title: "Learn to Qux", moduleUrl: "http://morea-framework.github.io/basic-template2/modules/qux", description: <p>This is an example module without any content.</p>
+ }
 },
  prerequisites: {
   { moduleUrl: "http://morea-framework.github.io/basic-template2/modules/bar", prerequisiteUrl: "http://cnn.com" }
