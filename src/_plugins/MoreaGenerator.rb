@@ -30,6 +30,9 @@ module Jekyll
         site.config['morea_domain'] = ''
       else
         site.config['morea_domain'] = site.config['morea_domain'].to_s
+        if site.config['morea_domain'].end_with?("/")
+          site.config['morea_domain'].chop!
+        end
       end
     end
 
