@@ -284,6 +284,8 @@ module Jekyll
       obj.instance_variables.map{|var| puts [var, obj.instance_variable_get(var)].join(":")}
     end
 
+    # Writes out the file module-info.js to the top-level directory.
+    # This file contains a variable assignment to a literal object containing module and prereq info.
     def write_module_info_file(site)
       module_file_dir = site.config['source']
       module_file_name = 'module-info.js'
@@ -291,7 +293,7 @@ module Jekyll
       module_file_contents = site.config['morea_course'] + ' = {' + "\n"
       module_file_contents += get_module_json_string(site)
       module_file_contents += "\n" + '}'
-      puts "module file contents: \n" + module_file_contents
+      #puts "module file contents: \n" + module_file_contents
       File.open(module_file_path, 'w') { |file| file.write(module_file_contents) }
       site.static_files << Jekyll::StaticFile.new(site, site.source, '', module_file_name)
     end
@@ -300,7 +302,7 @@ module Jekyll
       json = "modules: {"
       site.config['morea_module_pages'].each do |mod|
         mod_id = mod.data['morea_id']
-        json += "\n  { course: #{site.config['morea_course'].inspect}, title: #{mod.data['title'].inspect}, moduleUrl: #{get_module_url_from_id(mod_id, site).inspect}, description: #{mod.data['morea_summary'].inspect} },"
+        json += "\n  { course: #{site.config['morea_course'].inspect}, title: #{mod.data['title'].inspect}, moduleUrl: #{get_module_url_from_id(mod_id, site).inspect}, sort_order: #{mod.data['morea_sort_order']}, description: #{mod.data['morea_summary'].inspect} },"
       end
       #strip trailing comma
       json.chop!
