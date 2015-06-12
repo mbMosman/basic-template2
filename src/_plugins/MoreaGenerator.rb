@@ -535,8 +535,8 @@ module Jekyll
     def get_event_url(morea_page, site)
       if (morea_page.data['morea_type'] == 'module')
         url = "#{site.baseurl}/modules/#{morea_page.data['morea_id']}"
-      else  # should be a prereq and so url is absolute.
-        url = "#{site.baseurl}#{morea_page.data['morea_url']}"
+      else  # otherwise the baseurl is included. Weird.
+        url = "#{morea_page.data['morea_url']}"
       end
       return url
     end
