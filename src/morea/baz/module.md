@@ -13,6 +13,8 @@ morea_assessments:
  - assessment3
 morea_type: module
 morea_sort_order: 3
+morea_start_date: "2015-06-11"
+morea_end_date: "2015-06-15"
 morea_labels:
  - optional
  - advanced

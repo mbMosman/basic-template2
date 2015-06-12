@@ -4,6 +4,7 @@ published: true
 morea_id: experience3
 morea_type: experience
 morea_summary: "The third experiential learning event."
+morea_start_date: "2015-06-11T18:00"
 morea_sort_order: 3
 ---
 
