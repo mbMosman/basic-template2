@@ -4,7 +4,6 @@ safe: false
 baseurl: /basic-template2
 exclude: [morea]
 morea_theme: spacelab
-morea_google_analytics_tracking_id: "UA-61448657-1"
 morea_navbar_items:
   #- Prerequisites
   - Modules
@@ -13,3 +12,11 @@ morea_navbar_items:
   - Experiences
   - Assessments
   - Schedule
+
+# The following properties are optional.
+# See the User Guide (http://morea-framework.github.io/userguide.html) for more info.
+
+# morea_course: ics311
+# morea_domain: http://morea-framework.github.io/
+# morea_google_analytics_tracking_id: "<your tracking id here>"
+
