@@ -22,7 +22,7 @@ module Jekyll
         site.config['morea_navbar_items'] = ["Modules", "Outcomes", "Readings", "Experiences", "Assessments"]
       end
       if (site.config['morea_course'] == nil)
-        site.config['morea_course'] = 'theCourse'
+        site.config['morea_course'] = ''
       else
         site.config['morea_course'] = site.config['morea_course'].to_s
       end
@@ -73,7 +73,9 @@ module Jekyll
       check_for_undefined_footer_page(site)
       fix_morea_urls(site)
       sort_pages(site)
-      ModuleInfoFile.new(site).write_module_info_file
+      unless (site.config['morea_course'] == '')
+        ModuleInfoFile.new(site).write_module_info_file
+      end
       ScheduleInfoFile.new(site).write_schedule_info_file
       puts @summary
       if site.config['morea_fatal_errors']
@@ -265,6 +267,16 @@ module Jekyll
           site.config['morea_home_page'] = new_page
         elsif new_page.data['morea_type'] == "footer"
           site.config['morea_footer_page'] = new_page
+        elsif new_page.data['morea_type'] == "overview_modules"
+          site.config['morea_overview_modules'] = new_page
+        elsif new_page.data['morea_type'] == "overview_outcomes"
+          site.config['morea_overview_outcomes'] = new_page
+        elsif new_page.data['morea_type'] == "overview_readings"
+          site.config['morea_overview_readings'] = new_page
+        elsif new_page.data['morea_type'] == "overview_experiences"
+          site.config['morea_overview_experiences'] = new_page
+        elsif new_page.data['morea_type'] == "overview_assessments"
+          site.config['morea_overview_assessments'] = new_page
         end
       else
         @summary.unpublished_files += 1
@@ -496,7 +508,7 @@ module Jekyll
     end
   end
 
-  # Gather schedule data and write it to the schedule directory.
+  # Gather schedule data and write it to the schedule directory in a file called schedule-info.js.
   class ScheduleInfoFile
     def initialize(site)
       @site = site
@@ -505,6 +517,7 @@ module Jekyll
       @schedule_file_path= @schedule_file_dir + '/schedule/' + @schedule_file_name
     end
 
+    # Write a file declaring a global variable called moreaEventData containing an array of calendar events.
     def write_schedule_info_file
       schedule_file_contents = 'moreaEventData = '
       schedule_file_contents += get_schedule_events(@site)
@@ -513,6 +526,7 @@ module Jekyll
       @site.static_files << Jekyll::StaticFile.new(@site, @site.source, 'schedule/', @schedule_file_name)
     end
 
+    # Returns a JS array of object literals containing event data in FullCalendar syntax.
     def get_schedule_events(site)
       events = "["
       site.config['morea_page_table'].each do |morea_id, morea_page|
@@ -532,6 +546,7 @@ module Jekyll
       return events
     end
 
+    # Returns the URL (not including domain name) for this page.
     def get_event_url(morea_page, site)
       if (morea_page.data['morea_type'] == 'module')
         url = "#{site.baseurl}/modules/#{morea_page.data['morea_id']}"

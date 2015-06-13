@@ -2,10 +2,9 @@ name: Basic Template
 highlighter: pygments
 safe: false
 baseurl: /basic-template2
-morea_course: ics311
-morea_domain: http://morea-framework.github.io/
 exclude: [morea]
 morea_theme: spacelab
+morea_google_analytics_tracking_id: "UA-61448657-1"
 morea_navbar_items:
   #- Prerequisites
   - Modules
@@ -13,4 +12,4 @@ morea_navbar_items:
   - Readings
   - Experiences
   - Assessments
-
+  - Schedule

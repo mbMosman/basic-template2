@@ -13,13 +13,26 @@
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
   <![endif]-->
 
   <!-- Load Bootstrap JavaScript components -->
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-61448657-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
 
 </head>
 <body>
@@ -50,6 +63,8 @@
           <li><a href="/assessments/">Assessments</a></li>
         
         
+        <li><a href="/schedule/">Schedule</a></li>
+        
       </ul>
     </div>
   </div>
@@ -58,6 +73,35 @@
 
   <div class="container">
   <h1>Learning Outcomes</h1>
+</div>
+
+<div class="container">
+  <p>This page collects together all of the “outcomes” associated with individual modules.</p>
+
+<!---  UH/ICS-specific boilerplate. Modify for your own organization.
+
+### Course-level outcomes
+
+Students mastering the material in this course will achieve the following [Student learning outcomes for the ICS undergraduate degree program](http://www.ics.hawaii.edu/academics/undergraduate-degree-programs/student-learning-outcomes-undergraduate/)
+
+
+  * [A] Students can apply knowledge of computing and mathematics appropriate to the discipline.
+  * [B] Students can analyze a problem, and identify and define the computing requirements appropriate to its solution.
+  * [C] Students can design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs.
+  * [D] Students can function effectively on teams to accomplish a common goal.
+  * [E] Students have an understanding of professional, ethical, legal, security and social issues and responsibilities.
+  * [F] Students can communicate effectively with a range of audiences.
+  * [G] Students can analyze the local and global impact of computing on individuals, organizations, and society.
+  * [H] Students can recognize the need for and an ability to engage in continuing professional development.
+  * [I] Students can use current techniques, skills, and tools necessary for computing practice.
+  * [J] An ability to use and apply current technical concepts and practices in the core information technologies.
+  * [K] An ability to identify and analyze user needs and take them into account in the selection, creation, evaluation and administration of computer-based systems.
+  * [L] An ability to effectively integrate IT-based solutions into the user environment.
+  * [M] An understanding of best practices and standards and their application.
+  * [N] An ability to assist in the creation of an effective project plan.
+  
+-->
+
 </div>
 
 <div class="section-background-1">
@@ -139,7 +183,7 @@
 
 
 
-<div class="footer-background">
+<div class="footer-background  hidden-print">
 <footer>
   <div class="container page-footer">
     
@@ -148,7 +192,7 @@ email@example.com<br /></p>
 
     
     <p style="margin: 0">Powered by the <a href="http://morea-framework.github.io/">Morea Framework</a> (Theme: spacelab)<br>
-       Last update on: <span>2015-06-11 15:41:51 -1000</span></p>
+       Last update on: <span>2015-06-12 14:09:02 -1000</span></p>
     <p style="margin: 0">
       
       4 modules
