@@ -1,5 +1,8 @@
 name: Basic Template
-highlighter: pygments
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 safe: false
 baseurl: /basic-template2
 exclude: [morea]
