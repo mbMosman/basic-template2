@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> An overview of Foos | Basic Template </title>
+  <title> An overview of Foo | Basic Template </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -21,6 +21,10 @@
   <script src="//code.jquery.com/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  
   
 
 </head>
@@ -61,9 +65,24 @@
 
 
 <div class="container">
-  <h1 id="reading-1">Reading 1</h1>
+  <h1 id="mathjax-samples">MathJax samples</h1>
 
-<p>This is the first reading. It is an internal web page.</p>
+<p>This page demonstrates the use of <a href="http://www.mathjax.org">MathJax</a> for rendering mathematical notation in markdown files.</p>
+
+<p>Here is an example of MathJax inline rendering: \( 1/x^{2} \).</p>
+
+<p>Here is an example of block rendering:</p>
+
+<p>\[ \frac{1}{n^{2}} \]</p>
+
+<p>And here is another:</p>
+
+<script type="math/tex; mode=display"> 
+P(\mathbf{Y} = \mathbf{y}|\mathbf{X}) = exp[{\theta } ^{T} g(\mathbf{y},\mathbf{X})]/k(\theta ) 
+</script>
+
+<p>Finally, when \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+<script type="math/tex">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.</script></p>
 
 </div>
 
@@ -73,12 +92,12 @@
 <footer>
   <div class="container page-footer">
     
-      <p>Example Name | Example Department | Example University <br /><br />
-email@example.com<br /></p>
+      <p>Example Name | Example Department | Example University<br />
+email@example.com</p>
 
     
     <p style="margin: 0">Powered by the <a href="http://morea-framework.github.io/">Morea Framework</a> (Theme: spacelab)<br>
-       Last update on: <span>2015-06-16 12:27:36 -1000</span></p>
+       Last update on: <span>2015-06-16 12:45:43 -1000</span></p>
     <p style="margin: 0">
       
       4 modules
