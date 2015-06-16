@@ -70,7 +70,7 @@
 		
 			<item>
 				<title>Welcome to Jekyll!</title>
-				<description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
+				<description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!&lt;br /&gt;
 To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
@@ -98,12 +98,12 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
 <footer>
   <div class="container page-footer">
     
-      <p>Example Name | Example Department | Example University <br />
+      <p>Example Name | Example Department | Example University <br /><br />
 email@example.com<br /></p>
 
     
     <p style="margin: 0">Powered by the <a href="http://morea-framework.github.io/">Morea Framework</a> (Theme: spacelab)<br>
-       Last update on: <span>2015-06-12 14:15:52 -1000</span></p>
+       Last update on: <span>2015-06-16 12:27:36 -1000</span></p>
     <p style="margin: 0">
       
       4 modules
